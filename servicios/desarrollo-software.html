@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexusAI — Desarrollo de Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../sections.css"/>
+  <style>
+    /* ── Estilos específicos de página de subcategorías ── */
+    .subpage-hero {
+      min-height: 38vh;
+      padding: calc(var(--header-h) + 4rem) clamp(1.25rem,4vw,2.5rem) 3rem;
+      background: var(--clr-surface);
+      display: flex; align-items: flex-end;
+      position: relative; overflow: hidden;
+    }
+    .subpage-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 10% 60%, rgba(245,166,35,.06) 0%, transparent 70%);
+    }
+    .subpage-hero__inner {
+      max-width: 1200px; width: 100%; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--clr-muted);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--clr-border);
+      padding: .45rem 1rem; border-radius: var(--r-pill);
+      margin-bottom: 1.75rem; cursor: pointer;
+      transition: color var(--t-fast) var(--ease),
+                  border-color var(--t-fast) var(--ease),
+                  background var(--t-fast) var(--ease);
+    }
+    .back-btn:hover {
+      color: var(--clr-amber);
+      border-color: rgba(245,166,35,.4);
+      background: var(--clr-amber-dim);
+    }
+    .subpage-title { margin-bottom: .75rem; }
+    .subpage-desc  { max-width: 560px; }
+    .subcats-section {
+      padding: clamp(4rem,7vw,7rem) 0;
+      background: var(--clr-bg);
+    }
+    .subcats-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+    }
+    .subcats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+    .subcat-card {
+      display: flex; flex-direction: column;
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      padding: 1.75rem 1.5rem;
+      cursor: pointer; text-decoration: none; color: var(--clr-text);
+      position: relative; overflow: hidden;
+      transition: transform var(--t-mid) var(--ease),
+                  border-color var(--t-mid) var(--ease),
+                  box-shadow var(--t-mid) var(--ease),
+                  background var(--t-mid) var(--ease);
+    }
+    .subcat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245,166,35,.45);
+      box-shadow: 0 0 28px rgba(245,166,35,.2), 0 8px 30px rgba(0,0,0,.5);
+      background: var(--clr-card-hover);
+    }
+    .subcat-card::after {
+      content: '→';
+      position: absolute; bottom: 1.25rem; right: 1.5rem;
+      font-size: 1rem; color: var(--clr-muted);
+      transition: transform var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+    }
+    .subcat-card:hover::after { transform: translateX(5px); color: var(--clr-amber); }
+    .subcat-num {
+      font-family: var(--font-display); font-size: 2.5rem; line-height: 1;
+      color: rgba(245,166,35,.15); letter-spacing: .04em;
+      margin-bottom: .75rem;
+    }
+    .subcat-name {
+      font-family: var(--font-display); font-size: 1.3rem;
+      color: var(--clr-white); letter-spacing: .04em; margin-bottom: .5rem;
+    }
+    .subcat-desc {
+      font-size: .82rem; color: var(--clr-muted); line-height: 1.6;
+    }
+    @media (max-width: 860px) {
+      .hamburger { display: flex; }
+      .main-nav {
+        position: fixed; top: var(--header-h); left: 0; right: 0;
+        background: rgba(8,10,14,.97); backdrop-filter: blur(24px);
+        flex-direction: column; align-items: stretch;
+        gap: .25rem; padding: 1.25rem;
+        border-bottom: 1px solid var(--clr-border);
+        transform: translateY(-6px); opacity: 0;
+        visibility: hidden; pointer-events: none;
+        transition: transform var(--t-mid) var(--ease),
+                    opacity var(--t-mid) var(--ease),
+                    visibility 0s linear var(--t-mid);
+      }
+      .main-nav.is-open {
+        transform: translateY(0); opacity: 1;
+        visibility: visible; pointer-events: auto;
+        transition: transform var(--t-mid) var(--ease), opacity var(--t-mid) var(--ease);
+      }
+      .nav-link { padding: .9rem 1.1rem; font-size: .95rem; }
+      .nav-link::after { display: none; }
+      .nav-link--cta { margin-left: 0; margin-top: .5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="NexusAI Inicio">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+            <line x1="18" y1="2"  x2="18" y2="14" stroke="currentColor" stroke-width="1"/>
+            <line x1="18" y1="22" x2="18" y2="34" stroke="currentColor" stroke-width="1"/>
+            <line x1="2"  y1="10" x2="14" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="22" y1="20" x2="34" y2="26" stroke="currentColor" stroke-width="1"/>
+            <line x1="34" y1="10" x2="22" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="14" y1="20" x2="2"  y2="26" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">NEXUS<em>AI</em></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="../index.html"       class="nav-link">Inicio</a>
+        <a href="../sections.html#servicios" class="nav-link is-active">Servicios</a>
+        <a href="../sections.html#quien-soy" class="nav-link">Quién soy</a>
+        <a href="../blog.html"        class="nav-link">Blog</a>
+        <a href="../contacto.html"    class="nav-link nav-link--cta">Contacto</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav" type="button">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="subpage-hero">
+      <div class="subpage-hero__inner">
+        <a href="../sections.html#servicios" class="back-btn">
+          ← Volver a nuestros servicios
+        </a>
+        <span class="section-eyebrow">Código que escala</span>
+        <h1 class="section-title subpage-title">Desarrollo de Software</h1>
+        <p class="section-desc subpage-desc">Soluciones robustas y bien documentadas en las tecnologías que tu negocio necesita.</p>
+      </div>
+    </div>
+
+    <section class="subcats-section" aria-labelledby="subcats-title">
+      <div class="subcats-inner">
+        <h2 class="section-title" id="subcats-title" style="margin-bottom:2rem">Especialidades</h2>
+        <div class="subcats-grid" role="list">
+          <a href="python.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">01</span>
+            <span class="subcat-name">Python</span>
+            <span class="subcat-desc">Scripts, automatizaciones, APIs REST y análisis de datos con Django y FastAPI.</span>
+          </a>
+          <a href="html-css.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">02</span>
+            <span class="subcat-name">HTML / CSS</span>
+            <span class="subcat-desc">Maquetación semántica, animaciones y sistemas de diseño en código limpio.</span>
+          </a>
+          <a href="javascript.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">03</span>
+            <span class="subcat-name">JavaScript</span>
+            <span class="subcat-desc">Frontend moderno con React, Vue o Vanilla JS y aplicaciones Node.js.</span>
+          </a>
+          <a href="apis.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">04</span>
+            <span class="subcat-name">APIs & Integraciones</span>
+            <span class="subcat-desc">Diseño e integración de APIs REST, GraphQL y servicios de terceros.</span>
+          </a>
+          <a href="ecommerce.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">05</span>
+            <span class="subcat-name">E-commerce</span>
+            <span class="subcat-desc">Tiendas Shopify, WooCommerce y soluciones de pago personalizadas.</span>
+          </a>
+          <a href="plsql-informix.html" class="subcat-card reveal" role="listitem">
+            <span class="subcat-num">06</span>
+            <span class="subcat-name">PL/SQL & Informix</span>
+            <span class="subcat-desc">Consultas optimizadas, procedimientos almacenados y migración de datos.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="logo-wordmark">NEXUS<em>AI</em></span>
+      <p>© 2025 NexusAI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+    (function() {
+      const btn = document.getElementById('hamburger-btn');
+      const nav = document.getElementById('main-nav');
+      if (!btn || !nav) return;
+      function toggle(fc) {
+        const open = fc ? false : btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', open);
+        nav.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      btn.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+      nav.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => toggle(true)));
+      document.addEventListener('click', e => {
+        if (btn.getAttribute('aria-expanded') === 'true' && !btn.contains(e.target) && !nav.contains(e.target)) toggle(true);
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { toggle(true); btn.focus(); } });
+      window.matchMedia('(min-width:861px)').addEventListener('change', ({matches}) => { if (matches) { toggle(true); document.body.style.overflow = ''; } });
+    })();
+    (function() {
+      const header = document.getElementById('site-header');
+      if (!header) return;
+      const s = document.createElement('div');
+      s.setAttribute('aria-hidden','true');
+      s.style.cssText='position:absolute;top:1px;height:1px;width:1px;pointer-events:none;visibility:hidden;';
+      document.body.prepend(s);
+      new IntersectionObserver(([e]) => header.classList.toggle('is-scrolled', !e.isIntersecting)).observe(s);
+    })();
+    (function() {
+      const cards = document.querySelectorAll('.subcat-card');
+      cards.forEach((c,i) => {
+        c.style.opacity = '0';
+        c.style.transform = 'translateY(20px)';
+        c.style.transition = 'opacity .5s ease, transform .5s ease';
+        c.style.transitionDelay = (i * 0.07) + 's';
+      });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target); }
+        });
+      }, {threshold:0.1});
+      cards.forEach(c => io.observe(c));
+    })();
+  </script>
+</body>
+</html>
