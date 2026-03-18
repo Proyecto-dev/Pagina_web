@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — Servicios, Quién Soy & Testimonios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sections.css" />
+</head>
+<body>
+
+  <!-- Header de referencia (mismo del entregable anterior) -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="header-hero.html" class="logo" aria-label="NexusAI Inicio">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+            <line x1="18" y1="2"  x2="18" y2="14" stroke="currentColor" stroke-width="1"/>
+            <line x1="18" y1="22" x2="18" y2="34" stroke="currentColor" stroke-width="1"/>
+            <line x1="2"  y1="10" x2="14" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="22" y1="20" x2="34" y2="26" stroke="currentColor" stroke-width="1"/>
+            <line x1="34" y1="10" x2="22" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="14" y1="20" x2="2"  y2="26" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">NEXUS<em>AI</em></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="header-hero.html"        class="nav-link">Inicio</a>
+        <a href="#servicios"              class="nav-link is-active">Servicios</a>
+        <a href="#quien-soy"              class="nav-link">Quién soy</a>
+        <a href="closing.html#blog"       class="nav-link">Blog</a>
+        <a href="closing.html#contacto"   class="nav-link nav-link--cta">Contacto</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav" type="button">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECCIÓN 3: SERVICIOS
+         ═══════════════════════════════════════════════════ -->
+    <section class="services" id="servicios" aria-labelledby="svc-title">
+      <div class="services__inner">
+
+        <div class="section-header">
+          <span class="section-eyebrow">Lo que hacemos</span>
+          <h2 class="section-title" id="svc-title">Servicios</h2>
+          <p class="section-desc">
+            Seis pilares de expertise diseñados para llevar tu negocio al siguiente nivel.
+          </p>
+        </div>
+
+        <div class="services-grid" role="list">
+
+          <a href="servicios/diseno-web.html" class="svc-btn" role="listitem" data-glow="amber">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <line x1="4" y1="16" x2="44" y2="16" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="22" cy="12" r="1.5" fill="currentColor"/>
+                <line x1="16" y1="40" x2="32" y2="40" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="24" y1="36" x2="24" y2="40" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Diseño Web</span>
+              <span class="svc-btn__sub">Creadores de sitios · UI/UX</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+          <a href="servicios/desarrollo-software.html" class="svc-btn" role="listitem" data-glow="blue">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <polyline points="16,18 8,24 16,30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="32,18 40,24 32,30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="28" y1="12" x2="20" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Desarrollo de Software</span>
+              <span class="svc-btn__sub">Python · JS · APIs · E-commerce · PL/SQL · Informix</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+          <a href="servicios/escritura-traduccion.html" class="svc-btn" role="listitem" data-glow="teal">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <path d="M8 12h20M8 20h14M8 28h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="30" y="22" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M34 26v6M38 26v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Escritura y Traducción</span>
+              <span class="svc-btn__sub">Audio a texto · Video a texto · Traducción</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+          <a href="servicios/marketing-digital.html" class="svc-btn" role="listitem" data-glow="green">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <polyline points="6,34 16,22 24,28 34,14 42,20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16" cy="22" r="2.5" fill="currentColor"/>
+                <circle cx="24" cy="28" r="2.5" fill="currentColor"/>
+                <circle cx="34" cy="14" r="2.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Marketing Digital</span>
+              <span class="svc-btn__sub">SEO · Redes Sociales · Motores de búsqueda</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+          <a href="servicios/ia.html" class="svc-btn svc-btn--featured" role="listitem" data-glow="amber">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <circle cx="24" cy="24" r="5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M24 8v7M24 33v7M8 24h7M33 24h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12.7 12.7l4.95 4.95M30.35 30.35l4.95 4.95M35.3 12.7l-4.95 4.95M17.65 30.35l-4.95 4.95" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Servicios de IA</span>
+              <span class="svc-btn__sub">Desarrollo IA · Apps · Chatbots · Integraciones · Modelos</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+          <a href="servicios/negocios.html" class="svc-btn" role="listitem" data-glow="rose">
+            <div class="svc-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
+                <rect x="6"  y="22" width="10" height="18" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="19" y="14" width="10" height="26" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="32" y="8"  width="10" height="32" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <line x1="6" y1="42" x2="42" y2="42" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="svc-btn__body">
+              <span class="svc-btn__title">Negocios</span>
+              <span class="svc-btn__sub">Consultoría IA · Gestión Proyectos · Gestión Software · BI</span>
+            </div>
+            <span class="svc-btn__arrow" aria-hidden="true">→</span>
+            <div class="svc-btn__glow" aria-hidden="true"></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════
+         SECCIÓN 4A: QUIÉN SOY
+         ═══════════════════════════════════════════════════ -->
+    <section class="about" id="quien-soy" aria-labelledby="about-title">
+      <div class="about__inner">
+
+        <div class="about__media">
+          <div class="about__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+              alt="Fotografía del fundador de NexusAI"
+              class="about__img"
+              loading="lazy"
+            />
+            <div class="about__img-frame" aria-hidden="true"></div>
+            <div class="about__img-glow"  aria-hidden="true"></div>
+          </div>
+          <div class="about__badge" aria-hidden="true">
+            <span class="badge-num">+8</span>
+            <span class="badge-label">años en IA<br>&amp; Digital</span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="section-eyebrow">El equipo detrás</span>
+          <h2 class="section-title" id="about-title">Quién Soy</h2>
+          <p class="about__text">
+            Soy consultor senior en Inteligencia Artificial y Marketing Digital. He colaborado con startups y empresas Fortune 500 para construir soluciones que transforman datos en decisiones y creatividad en resultados medibles.
+          </p>
+          <p class="about__text">
+            Mi enfoque combina rigor técnico con visión estratégica: cada proyecto es una oportunidad de innovar sin perder de vista el impacto real en el negocio.
+          </p>
+          <div class="about__stats" aria-label="Estadísticas clave">
+            <div class="about__stat">
+              <strong>150<span>+</span></strong>
+              <em>Proyectos entregados</em>
+            </div>
+            <div class="about__stat-sep" aria-hidden="true"></div>
+            <div class="about__stat">
+              <strong>40<span>+</span></strong>
+              <em>Clientes activos</em>
+            </div>
+            <div class="about__stat-sep" aria-hidden="true"></div>
+            <div class="about__stat">
+              <strong>98<span>%</span></strong>
+              <em>Satisfacción</em>
+            </div>
+          </div>
+          <div class="about__cta-group">
+            <a href="closing.html#contacto" class="btn-primary">
+              Hablemos de tu proyecto
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 01-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#quien-soy" class="btn-secondary">Ver mi historia completa</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════
+         SECCIÓN 4B: TESTIMONIOS
+         ═══════════════════════════════════════════════════ -->
+    <section class="testimonials" id="testimonios" aria-labelledby="test-title">
+      <div class="test__inner">
+
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">Resultados reales</span>
+          <h2 class="section-title" id="test-title">Lo que dicen los clientes</h2>
+        </div>
+
+        <div class="carousel" role="region" aria-label="Testimonios de clientes">
+          <div class="carousel__viewport" id="carousel-viewport">
+            <div class="carousel__track" id="carousel-track">
+
+              <article class="test-card">
+                <div class="test-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <blockquote class="test-card__quote">
+                  Implementaron un chatbot con IA que redujo nuestro tiempo de respuesta al cliente en un 70 %. La calidad técnica y la comunicación durante todo el proceso fueron verdaderamente impecables.
+                </blockquote>
+                <div class="test-card__author">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Ana García" loading="lazy" width="48" height="48"/>
+                  <div>
+                    <strong>Ana García</strong>
+                    <span>CEO · RetailTech Colombia</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="test-card">
+                <div class="test-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <blockquote class="test-card__quote">
+                  El rediseño completo de nuestra plataforma fue transformador. Aumentamos la tasa de conversión un 45 % en solo dos meses. Dominan tanto el diseño como la estrategia de negocio.
+                </blockquote>
+                <div class="test-card__author">
+                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=80&q=80" alt="Carlos Mendoza" loading="lazy" width="48" height="48"/>
+                  <div>
+                    <strong>Carlos Mendoza</strong>
+                    <span>CTO · FinanceStart México</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="test-card">
+                <div class="test-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <blockquote class="test-card__quote">
+                  La estrategia de SEO y contenidos duplicó nuestro tráfico orgánico en seis meses. Un equipo que entiende el negocio antes de escribir una sola línea de código.
+                </blockquote>
+                <div class="test-card__author">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=80&q=80" alt="Sofía Restrepo" loading="lazy" width="48" height="48"/>
+                  <div>
+                    <strong>Sofía Restrepo</strong>
+                    <span>Directora de Marketing · EduOnline</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="test-card">
+                <div class="test-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <blockquote class="test-card__quote">
+                  Desarrollaron nuestra API de procesamiento de lenguaje natural desde cero. Entregaron en tiempo, dentro del presupuesto y con documentación técnica realmente ejemplar.
+                </blockquote>
+                <div class="test-card__author">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80" alt="David Kim" loading="lazy" width="48" height="48"/>
+                  <div>
+                    <strong>David Kim</strong>
+                    <span>Founder · DataBridge Labs</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="test-card">
+                <div class="test-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <blockquote class="test-card__quote">
+                  La consultoría en Business Intelligence transformó la manera en que tomamos decisiones. Ahora tenemos dashboards en tiempo real que antes nos tomaban semanas construir manualmente.
+                </blockquote>
+                <div class="test-card__author">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=80" alt="María Fernández" loading="lazy" width="48" height="48"/>
+                  <div>
+                    <strong>María Fernández</strong>
+                    <span>COO · LogiSmart Latam</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="carousel__controls" aria-label="Controles del carrusel">
+            <button class="carousel__btn" id="prev-btn" aria-label="Anterior" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 010 1.06L8.06 10l3.72 3.72a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="Navegar testimonios"></div>
+            <button class="carousel__btn" id="next-btn" aria-label="Siguiente" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="logo-wordmark">NEXUS<em>AI</em></span>
+      <p>© 2025 NexusAI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="sections.js"></script>
+</body>
+</html>

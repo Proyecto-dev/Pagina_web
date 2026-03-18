@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — Blog, Footer & Elemento Atómico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="closing.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       ELEMENTO ATÓMICO — Canvas de fondo interactivo
+       (posición fixed, z-index bajo, reacciona al scroll)
+       ════════════════════════════════════════════════════════ -->
+  <canvas id="atomic-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header stub de referencia -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="header-hero.html" class="logo" aria-label="NexusAI Inicio">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+            <line x1="18" y1="2"  x2="18" y2="14" stroke="currentColor" stroke-width="1"/>
+            <line x1="18" y1="22" x2="18" y2="34" stroke="currentColor" stroke-width="1"/>
+            <line x1="2"  y1="10" x2="14" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="22" y1="20" x2="34" y2="26" stroke="currentColor" stroke-width="1"/>
+            <line x1="34" y1="10" x2="22" y2="16" stroke="currentColor" stroke-width="1"/>
+            <line x1="14" y1="20" x2="2"  y2="26" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">NEXUS<em>AI</em></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="header-hero.html"        class="nav-link">Inicio</a>
+        <a href="sections.html#servicios" class="nav-link">Servicios</a>
+        <a href="sections.html#quien-soy" class="nav-link">Quién soy</a>
+        <a href="#blog"                   class="nav-link is-active">Blog</a>
+        <a href="#contacto"               class="nav-link nav-link--cta">Contacto</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="main-nav" type="button">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════════════════════════════════════════
+         SECCIÓN 5: BLOG — ÚLTIMOS ARTÍCULOS
+         ════════════════════════════════════════════════════════ -->
+    <section class="blog" id="blog" aria-labelledby="blog-title">
+      <div class="blog__inner">
+
+        <header class="section-header">
+          <span class="section-eyebrow">Conocimiento en acción</span>
+          <h2 class="section-title" id="blog-title">Blog</h2>
+          <p class="section-desc">
+            Tendencias, casos de uso y guías prácticas sobre IA, diseño y marketing digital.
+          </p>
+        </header>
+
+        <div class="blog-grid" role="list">
+
+          <!-- Tarjeta 1 -->
+          <article class="blog-card" role="listitem">
+            <a href="blog/ia-en-marketing.html" class="blog-card__img-link" tabindex="-1" aria-hidden="true">
+              <div class="blog-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=75"
+                  alt="IA transformando el marketing digital"
+                  loading="lazy"
+                  width="800" height="450"
+                />
+                <div class="blog-card__img-overlay"></div>
+              </div>
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-tag">Inteligencia Artificial</span>
+                <time datetime="2025-06-12" class="blog-date">12 Jun 2025</time>
+              </div>
+              <h3 class="blog-card__title">
+                <a href="blog/ia-en-marketing.html">
+                  Cómo la IA Generativa está redefiniendo el embudo de conversión en 2025
+                </a>
+              </h3>
+              <p class="blog-card__excerpt">
+                Los modelos de lenguaje ya no son solo herramientas de productividad: están tomando decisiones de segmentación que los humanos tardaban semanas en ejecutar.
+              </p>
+              <footer class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=48&q=80"
+                    alt="Autor"
+                    width="32" height="32"
+                    loading="lazy"
+                  />
+                  <span>Carlos NexusAI</span>
+                </div>
+                <button class="like-btn" data-post="post-1" aria-label="Me gusta. 48 likes" type="button">
+                  <svg class="like-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="like-count">48</span>
+                </button>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="blog-card blog-card--featured" role="listitem">
+            <a href="blog/seo-con-ia.html" class="blog-card__img-link" tabindex="-1" aria-hidden="true">
+              <div class="blog-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=75"
+                  alt="SEO potenciado con inteligencia artificial"
+                  loading="lazy"
+                  width="800" height="450"
+                />
+                <div class="blog-card__img-overlay"></div>
+              </div>
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-tag blog-tag--featured">SEO · IA</span>
+                <time datetime="2025-06-05" class="blog-date">05 Jun 2025</time>
+              </div>
+              <h3 class="blog-card__title">
+                <a href="blog/seo-con-ia.html">
+                  SEO semántico con LLMs: la estrategia que ninguna agencia te está contando aún
+                </a>
+              </h3>
+              <p class="blog-card__excerpt">
+                Google ya interpreta intenciones, no palabras clave. Te mostramos cómo estructurar tu contenido para que los modelos de búsqueda te recomienden primero.
+              </p>
+              <footer class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=48&q=80"
+                    alt="Autora"
+                    width="32" height="32"
+                    loading="lazy"
+                  />
+                  <span>Ana Rivas</span>
+                </div>
+                <button class="like-btn" data-post="post-2" aria-label="Me gusta. 112 likes" type="button">
+                  <svg class="like-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="like-count">112</span>
+                </button>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="blog-card" role="listitem">
+            <a href="blog/chatbots-ventas.html" class="blog-card__img-link" tabindex="-1" aria-hidden="true">
+              <div class="blog-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=75"
+                  alt="Chatbots para ventas automatizadas"
+                  loading="lazy"
+                  width="800" height="450"
+                />
+                <div class="blog-card__img-overlay"></div>
+              </div>
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-tag">Chatbots</span>
+                <time datetime="2025-05-28" class="blog-date">28 May 2025</time>
+              </div>
+              <h3 class="blog-card__title">
+                <a href="blog/chatbots-ventas.html">
+                  De lead frío a cliente: el flujo de un chatbot que vende solo mientras duermes
+                </a>
+              </h3>
+              <p class="blog-card__excerpt">
+                Diseñamos un agente conversacional para un e-commerce que cerró 340 ventas en su primer mes sin intervención humana. Aquí está el blueprint completo.
+              </p>
+              <footer class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=48&q=80"
+                    alt="Autor"
+                    width="32" height="32"
+                    loading="lazy"
+                  />
+                  <span>David Kim</span>
+                </div>
+                <button class="like-btn" data-post="post-3" aria-label="Me gusta. 76 likes" type="button">
+                  <svg class="like-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="like-count">76</span>
+                </button>
+              </footer>
+            </div>
+          </article>
+
+        </div><!-- /blog-grid -->
+
+        <div class="blog-cta-row">
+          <a href="blog.html" class="btn-ghost-amber">
+            Ver todos los artículos
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 01-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         FRANJA CTA ANTES DEL FOOTER
+         ════════════════════════════════════════════════════════ -->
+    <section class="pre-footer-cta" aria-labelledby="cta-title">
+      <div class="pre-footer-cta__inner">
+        <div class="pre-footer-cta__text">
+          <span class="section-eyebrow">¿Listo para el siguiente paso?</span>
+          <h2 id="cta-title">Convirtamos tu idea en tu próximo producto.</h2>
+        </div>
+        <a href="#contacto" class="btn-primary">
+          Agendar una llamada gratuita
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 01-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER PRINCIPAL
+       ════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="contacto" role="contentinfo" aria-label="Pie de página NexusAI">
+    <div class="footer-grid">
+
+      <!-- Columna 1: Marca + Newsletter -->
+      <div class="footer-col footer-col--brand">
+        <a href="header-hero.html" class="footer-logo" aria-label="NexusAI — Ir al inicio">
+          <div class="logo-icon-sm" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" width="30" height="30">
+              <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <circle cx="18" cy="18" r="4" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark">NEXUS<em>AI</em></span>
+        </a>
+        <p class="footer-tagline">
+          Agencia especializada en IA aplicada, marketing digital y desarrollo de software de alto rendimiento.
+        </p>
+
+        <!-- Newsletter -->
+        <div class="newsletter" role="complementary" aria-label="Suscripción al newsletter">
+          <p class="newsletter__label">Recibe estrategias de IA cada semana</p>
+          <div class="newsletter__form-wrap">
+            <input
+              type="email"
+              id="newsletter-email"
+              class="newsletter__input"
+              placeholder="tu@email.com"
+              autocomplete="email"
+              aria-label="Tu dirección de correo electrónico"
+              required
+            />
+            <button class="newsletter__btn" type="button" id="newsletter-submit" aria-label="Suscribirse al newsletter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 01-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </div>
+          <p class="newsletter__success" id="newsletter-success" aria-live="polite" hidden>
+            ✓ ¡Gracias! Te hemos añadido a la lista.
+          </p>
+          <p class="newsletter__fine">Sin spam. Cancela cuando quieras.</p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Servicios -->
+      <nav class="footer-col footer-col--nav" aria-label="Servicios">
+        <h3 class="footer-col__title">Servicios</h3>
+        <a href="servicios/diseno-web.html"          class="footer-link">Diseño Web</a>
+        <a href="servicios/desarrollo-software.html" class="footer-link">Desarrollo de Software</a>
+        <a href="servicios/ia.html"                  class="footer-link">Servicios de IA</a>
+        <a href="servicios/marketing-digital.html"   class="footer-link">Marketing Digital</a>
+        <a href="servicios/escritura-traduccion.html" class="footer-link">Escritura y Traducción</a>
+        <a href="servicios/negocios.html"            class="footer-link">Negocios</a>
+      </nav>
+
+      <!-- Columna 3: Empresa -->
+      <nav class="footer-col footer-col--nav" aria-label="Empresa">
+        <h3 class="footer-col__title">Empresa</h3>
+        <a href="sections.html#quien-soy" class="footer-link">Quién soy</a>
+        <a href="#blog"                   class="footer-link">Blog</a>
+        <a href="closing.html"            class="footer-link">Casos de éxito</a>
+        <a href="#contacto"               class="footer-link">Contacto</a>
+      </nav>
+
+      <!-- Columna 4: Legal + Soporte -->
+      <nav class="footer-col footer-col--nav" aria-label="Legal y soporte">
+        <h3 class="footer-col__title">Legal & Soporte</h3>
+        <a href="politica-privacidad.html" class="footer-link">Política de privacidad</a>
+        <a href="terminos.html"            class="footer-link">Términos de uso</a>
+        <a href="cookies.html"             class="footer-link">Política de cookies</a>
+        <a href="soporte.html"             class="footer-link">Centro de soporte</a>
+        <a href="faq.html"                 class="footer-link">Preguntas frecuentes</a>
+      </nav>
+
+    </div><!-- /footer-grid -->
+
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+      <div class="footer-bottom__inner">
+
+        <p class="footer-copy">
+          © <span id="footer-year">2025</span> NexusAI.
+          Todos los derechos reservados. Hecho con precisión en Colombia 🇨🇴
+        </p>
+
+        <!-- Redes sociales -->
+        <div class="social-links" aria-label="Redes sociales de NexusAI">
+
+          <a href="https://linkedin.com/company/nexusai" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de NexusAI">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+          <a href="https://twitter.com/nexusai" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) de NexusAI">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+
+          <a href="https://instagram.com/nexusai" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram de NexusAI">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+
+          <a href="https://youtube.com/@nexusai" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="YouTube de NexusAI">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+
+        </div>
+
+        <p class="footer-legal">
+          <a href="/cdn-cgi/l/email-protection#3f535a585e537f515a474a4c5e56115c50"><span class="__cf_email__" data-cfemail="58343d3f393418363d202d2b3931763b37">[email&#160;protected]</span></a>
+          &nbsp;·&nbsp;
+          <a href="politica-privacidad.html">Privacidad</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       BOTÓN FLOTANTE DE WHATSAPP
+       El número está embebido en el href y no es visible en UI
+       ════════════════════════════════════════════════════════ -->
+  <a
+    class="whatsapp-fab"
+    id="whatsapp-fab"
+    href="https://wa.me/573112241803?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chatear por WhatsApp con NexusAI"
+  >
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="26" height="26" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    
